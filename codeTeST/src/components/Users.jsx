@@ -20,21 +20,21 @@ const User = () => {
 
   // error handling
   if (error) {
-    return <div>An error occured: {error.message}</div>;
+    return <div className='notification is-danger'>An error occured: {error.message}</div>;
   }
 
   return (
-    <table>
+    <table className='table is-bordered is-fullwidth mt-5'>
       <thead>
         <tr>
-          <th>Profile Picture</th>
-          <th>Name</th>
+          <th  className='has-text-weight-bold is-size-5'>Profile Picture</th>
+          <th className='has-text-weight-bold is-size-5'>Name</th>
         </tr>
       </thead>
       <tbody>
         {users.map((user) => (
           <tr key={user.id}>
-            <td>
+            <td className='is-size-6'>
               <img src={user.avatar_url} alt={user.login} />
             </td>
             <td>{user.login}</td>
